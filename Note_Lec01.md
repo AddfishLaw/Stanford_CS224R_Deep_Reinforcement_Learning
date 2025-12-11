@@ -20,7 +20,7 @@
 
 ### Version 0（deterministic policy）
 
-> Deterministic policy：确定性策略——给一个状态 s，策略直接吐出一个确定的动作 \hat a，不是一个概率分布
+> Deterministic policy：确定性策略——给一个状态 s，策略直接吐出一个确定的动作 $\hat a$，不是一个概率分布
 
 #### Steps
 
@@ -29,10 +29,8 @@ $\mathcal{D} := \{(s_1, a_1, \ldots, s_T)\}$
 
 2. For deterministic policy, supervised regression to the expert’s actions $$\min_{\theta} \ \frac{1}{|\mathcal{D}|} \sum_{(s,a)\in \mathcal{D}} \lVert a - \hat a \rVert^2, \quad \text{where } \hat a = \pi_\theta(s)$$
     > - $\frac{1}{|\mathcal{D}|}$：除以样本数，得到平均损失。
-    > - 把“模仿专家动作”当成一个普通的监督学习回归问题：
-给状态 s 作为输入，让神经网络输出动作 $\hat a$，
-让 $\hat a$ 尽可能接近专家给的 $a$（用均方误差度量），
-不断调 $\theta$ 把这个误差压到最小。
+    >
+    > - 把“模仿专家动作”当成一个普通的监督学习回归问题：给状态 s 作为输入，让神经网络输出动作 $\hat a$，让 $\hat a$ 尽可能接近专家给的 $a$（用均方误差度量），不断调 $\theta$ 把这个误差压到最小。
 
 3. Deploy learned policy $\pi_\theta$
 
