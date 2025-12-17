@@ -416,8 +416,11 @@ BUT, guaranteed that $E_{\pi(\mathbf{a} \mid \mathbf{s})}\left[\hat{Q}^\pi(\math
 2. Update policy $\pi$
    
    - If actions are discrete:
+  
      $$\pi(\mathbf{a} \mid \mathbf{s})=\left\{\begin{array}{l} 1 \text { if } \mathbf{a}=\arg \max_{\overline{\mathbf{a}}} \hat{Q}^\pi(\mathbf{s}, \overline{\mathbf{a}}) \\ 0 \text { otherwise }\end{array}\right.$$
+     
    - If actions are continuous:
+  
      $$ \theta \leftarrow \theta+\eta \nabla_\theta E_{\mathbf{s} \sim D, \mathbf{a} \sim \pi_\theta(\cdot \mid \mathbf{s})}\left[\hat{Q}^\pi(\mathbf{s}, \mathbf{a})\right] $$
 
 > **Summary**
